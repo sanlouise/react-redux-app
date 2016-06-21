@@ -9,14 +9,23 @@ export default class SearchBar extends Component {
 		this.onInputChange = this.onInputChange.bind(this);
 	}
 
+	onFormSubmit(event) {
+		//Prevent that when user hits return it will submit the form
+		event.preventDefault();
+
+		//Fetch weather data
+		
+	}
+
 	onInputChange(event) {
 		console.log(event.target.value);
+		//The 'this' local method here is overwritten in the constructor
 		this.setState({term: event.target.value});
 	}
 
 	render() {
 		return (
-			<form className="input-group">
+			<form onSubmit={this.onFormSubmit} className="input-group">
 				<input 
 				placeholder="Retrieve the weather-forecast"
 				className="form-control"
