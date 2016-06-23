@@ -6,7 +6,9 @@ const ROOT_URL = `api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 //It is convention to have a variable that holds an action type.
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
-export function fetchWeather() {
+//US Cities
+export function fetchWeather(city) {
+	const url = `${ROOT_URL}&q=${city},us`;
 	return {
 		type: FETCH_WEATHER
 	};
