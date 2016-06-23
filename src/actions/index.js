@@ -14,10 +14,12 @@ export function fetchWeather(city) {
 	//Axios returns a promise
 	const request = axios.get(url);
 
-	console.log('Request: ', request);
-
 	return {
 		type: FETCH_WEATHER,
+		//This is a promise, and Redux Promise (our middleware) stops this action.
+		//It is a gatekeeper. WHen the request finished, it dispatched a new action of
+		//the same type but with a payload of the resolved request. It unwraps the promise for us
+		//so that the reducer receives normal data, not a promise. 
 		payload: request
 	};
 }
