@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index'
 
 export default class SearchBar extends Component {
 	constructor(props) {
@@ -7,20 +10,22 @@ export default class SearchBar extends Component {
 		this.state = { term: '' };
 		//To ensure 'this' is referring to the right scope on onInputChange (around line 14)
 		this.onInputChange = this.onInputChange.bind(this);
+		this.onFormSubmit = this.onFormSubmit.bind(this);
 	}
 
-	onFormSubmit(event) {
+	onInputChange(e) {
+	//The 'this' local method here is overwritten in the constructor
+		this.setState({term: e.target.value});
+	}
+
+	onFormSubmit(e) {
 		//Prevent that when user hits return it will submit the form
-		event.preventDefault();
-
+		e.preventDefault();
 		//Fetch weather data
-		
-	}
+		this.props.fetchWeather(this.state.term);
+		//Clear out search input
+		this.setState({ term: ''});
 
-	onInputChange(event) {
-		console.log(event.target.value);
-		//The 'this' local method here is overwritten in the constructor
-		this.setState({term: event.target.value});
 	}
 
 	render() {
@@ -39,3 +44,10 @@ export default class SearchBar extends Component {
 		);
 	}
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchWeather }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar)
+
