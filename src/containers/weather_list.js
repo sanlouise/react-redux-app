@@ -8,13 +8,21 @@ class WeatherList extends Component {
 		const name = cityData.city.name
 		//Here we get a plain array of temperatures, as needed to create the charts
 		const temperatures = cityData.list.map(weather => weather.main.temp)
-		// const pressure = cityData.list.map(weather => weather.main.)
+		const pressure = cityData.list.map(weather => weather.main.pressure)
+		const humidity= cityData.list.map(weather => weather.main.humidity)
 
 		return (
 			<tr key={name}>
 				<td>{name}</td>
 				<td>
 					<Chart data ={temperatures} color="red" />
+				</td>
+				<td>
+					<Chart data ={pressure} color="red" />
+				</td>
+
+				<td>
+					<Chart data ={humidity} color="red" />
 				</td>
 			</tr>
 		);
