@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-export default class WeatherList extends Component {
+import { connect } from 'react-redux';
+
+class WeatherList extends Component {
 	render() {
 		return (
 
@@ -18,3 +20,11 @@ export default class WeatherList extends Component {
 		);
 	}
 }
+
+function mapStateToProps({ weather }) {
+	//weather is defined in the combineRedicers method in reducers/index.js
+	//key-value pair were equal, { weather: weather }
+	return { weather };
+}
+
+export default connect(mapStateToProps)(WeatherList);
