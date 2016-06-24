@@ -32,7 +32,7 @@ export default class SearchBar extends Component {
 		return (
 			<form onSubmit={this.onFormSubmit} className="input-group">
 				<input 
-				placeholder="Retrieve the weather-forecast"
+				placeholder="Retrieve the weather forecast"
 				className="form-control"
 				value={this.state.term}
 				onChange={this.onInputChange}
