@@ -4,13 +4,12 @@ Users can retrieve weather data (temperature, pressure and humidity) for their f
 
 ## Getting Started
 
-git clone https://github.com/sanlouise/react-redux-app
-
 ```
+git clone https://github.com/sanlouise/react-redux-app
 npm install
 ```
 
-## Start your servers!
+## Start your servers
 
 Enter `npm start` in a terminal to start your server (http://localhost:8080/).
 
