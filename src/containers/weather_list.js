@@ -6,11 +6,11 @@ import GoogleMap from '../components/google_map';
 class WeatherList extends Component {
 
 	renderWeather(cityData) {
-		const name = cityData.city.name
+		const name = cityData.city.name;
 		//Here we get a plain array of temperatures, as needed to create the charts
-		const temperatures = cityData.list.map(weather => weather.main.temp)
-		const pressure = cityData.list.map(weather => weather.main.pressure)
-		const humidity= cityData.list.map(weather => weather.main.humidity)
+		const temperatures = cityData.list.map(weather => weather.main.temp);
+		const pressure = cityData.list.map(weather => weather.main.pressure);
+		const humidity= cityData.list.map(weather => weather.main.humidity);
 		const { lon, lat } = cityData.city.coord;
 
 		return (
