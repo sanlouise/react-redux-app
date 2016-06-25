@@ -4,7 +4,7 @@ Users can retrieve weather data (temperature, pressure and humidity) for their f
 
 ## Getting Started
 
-git clone hhttps://github.com/sanlouise/react-redux-app
+git clone https://github.com/sanlouise/react-redux-app
 
 ```
 npm install
