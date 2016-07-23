@@ -1,6 +1,6 @@
 import axios from 'axios';
+import API_KEY from '../secrets';
 
-const API_KEY = 'af00aa57f434ec0b68224498ecbb55ed';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 //We do this because we need the use the identical name in our reducer.
