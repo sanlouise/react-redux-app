@@ -7,7 +7,6 @@ class WeatherList extends Component {
 
 	renderWeather(cityData) {
 		const name = cityData.city.name;
-		//Here we get a plain array of temperatures, as needed to create the charts
 		const temperatures = cityData.list.map(weather => weather.main.temp);
 		const pressure = cityData.list.map(weather => weather.main.pressure);
 		const humidity= cityData.list.map(weather => weather.main.humidity);
@@ -32,7 +31,6 @@ class WeatherList extends Component {
 
 	render() {
 		return (
-
 			<table className="table table-hover">
 				<thead>
 					<tr>
@@ -51,8 +49,6 @@ class WeatherList extends Component {
 }
 
 function mapStateToProps({ weather }) {
-	//weather is defined in the combineRedicers method in reducers/index.js
-	//key-value pair were equal, { weather: weather }
 	return { weather };
 }
 
